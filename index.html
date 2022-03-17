@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Star Wars uppgift</title>
+</head>
+<body>
+  <h3><img src="./images_SW/S_W_logo.png" alt="Logo SW" class="logoImage"></h3>
+    
+ 
+    <div class="characterWrapper">
+      <div class="userWrapper1 selectCharecter">
+        
+          <label for="character1" class="labelText">Choose character 1</label>
+            <select name="character1" id="character1" class="selectRuta">
+                <option value="none" selected disabled></option>
+                <option value="1">Luke Skywalker</option>
+                <option value="2">C-3P0</option>
+                <option value="3">R2-D2</option>
+                <option value="4">Darth Vader</option>
+                <option value="5">Leia Organ</option>
+                <option value="6">Owen Lars</option>
+                <option value="7">Beru Whitesun Lars</option>
+                <option value="8">R5-D5</option>
+                <option value="9">Biggs Darklighter</option>
+                <option value="10">Obi-Wan Kenobi</option>
+            </select> 
+            <br>
+      </div>
+      
+      <div class="userWrapper2 selectCharecter">
+        
+          <label for="character2" class="labelText">Choose character 2 </label>
+            <select name="character2" id="character2" class="selectRuta">
+                <option value="none" selected disabled></option>
+                <option value="1">Luke Skywalker</option>
+                <option value="2">C-3P0</option>
+                <option value="3">R2-D2</option>
+                <option value="4">Darth Vader</option>
+                <option value="5">Leia Organ</option>
+                <option value="6">Owen Lars</option>
+                <option value="7">Beru Whitesun Lars</option>
+                <option value="8">R5-D5</option>
+                <option value="9">Biggs Darklighter</option>
+                <option value="10">Obi-Wan Kenobi</option>
+            </select>
+          <br>
+          <button id="showCharacters" class="showCharacters">Show Characters</button> 
+          <br> 
+          <div class="startImage"><img src="./images_SW/Yoda.png" alt="Yoda"></div>
+          <div id="characterContainer1" class="charBox"></div> 
+          
+            <div class="infoContainerWrapper">
+              <div id="compareContainer1"></div>
+            </div>    
+          
+          <div id="characterContainer2" class="charBox"></div>
+      </div>
+    </div>
+
+            <div class="infoContainerWrapper">
+              <div id="compareContainer2"></div>
+            </div>
+            <br>
+  
+    <script src="main.js"></script>
+</body>
+</html>

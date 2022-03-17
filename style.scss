@@ -1,0 +1,212 @@
+body {
+  background: url("./images_SW/stars.jpg")  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-top: 50px;
+  
+}
+
+.logoImage {
+  width: auto;
+  height: 120px;
+  margin: auto;
+  display: flex;
+}
+
+.startImage{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(247, 191, 10);
+  width: 180px;
+  height: 210px;
+  border-radius: 5px;
+  opacity: 70%;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+//label text Choose character
+.labelText{
+  color: rgb(247, 191, 10);
+  //-webkit-text-stroke: 0.2px rgb(247, 191, 10); //boder för text
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+//select option rutan
+.selectRuta{
+  width: auto;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid rgb(247, 191, 10);
+  background-color: #363632;
+  color: rgb(247, 191, 10);
+  cursor: pointer; //adding pointer hand
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
+//Show character button + effect
+.showCharacters {
+  width: auto;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid rgb(247, 191, 10);
+  background-color: #363632;
+  color: rgb(247, 191, 10);
+  font-family: 'Merriweather Sans', sans-serif;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+
+
+  border: 2px solid currentColor;
+  //border-radius: 3rem;
+  color: rgb(247, 191, 10);
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition: .2s; 
+  transform: ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  
+  &::after{ 
+    background-color: rgb(247, 191, 10);
+    //border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(10deg);
+    transform-origin: top left;
+    transition: .2s; 
+    transform: ease-out;
+    will-change: transform;
+    z-index: -1;
+  } 
+  &:hover::after{
+    transform: translate(0, 0);
+  } 
+  &:hover{
+    //border: 2px solid transparent;
+    color: indigo;
+    transform: scale(1.05);
+    will-change: transform;
+  }
+}
+
+//compare buttons effect
+#compareBtn {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 200;
+  border-radius: 3px;
+  border: 1px solid rgb(247, 191, 10);
+  background-color: #363632;
+  color: rgb(247, 191, 10);
+
+  color: rgb(247, 191, 10);
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: .2s; 
+  transform: ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  
+  &::after{ 
+    background-color: rgb(247, 191, 10);
+    //border-radius: 3rem;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 0) rotate(0deg);
+    transform-origin: top left;
+    transition: .2s; 
+    transform: ease-out;
+    will-change: transform;
+    z-index: -1;
+  } 
+  &:hover::after{
+    transform: translate(0, 0);
+  } 
+  &:hover{
+    //border: 2px solid transparent;
+    color: indigo;
+    transform: scale(1.05);
+    will-change: transform;
+  }
+}
+
+ul {
+  list-style-type: none;
+  color: rgb(247, 191, 10)
+};
+
+img {
+  width: auto;
+  height: 180px;
+  
+}
+
+//character Name style
+.characterName{
+  font-family: 'Merriweather Sans', sans-serif;
+  color: black;
+  -webkit-text-stroke: 0.2px rgb(247, 191, 10);
+  font-size: 22px;
+  text-align: center;
+}
+
+//andra senare
+p{
+  color: rgb(247, 191, 10);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 35px;
+  padding-right: 35px;
+  text-align: center;
+}
+
+//character container som alla info kommer in + compare buttons
+.characterContainer {
+  border: 3px solid rgb(247, 191, 10);
+  width: 300px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+//characters info med bilder boxes
+.charBox {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  
+}
