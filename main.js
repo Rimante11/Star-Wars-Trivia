@@ -253,7 +253,7 @@ let buildCharacter = (charUser) =>
   <div class="characterContainer">
     <div class="info">
       <h3 class="characterName">${charUser.name}</h3>
-      <img src="${charUser.pictureUrl}" alt="${charUser.name}">
+      <img class="imgC" src="${charUser.pictureUrl}" alt="${charUser.name}">
         <ul class="generalInfo">
           <li>Gender: ${charUser.gender}<li>
           <li>Height: ${charUser.height} cm<li>

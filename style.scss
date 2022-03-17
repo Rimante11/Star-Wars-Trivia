@@ -167,7 +167,12 @@ ul {
 img {
   width: auto;
   height: 180px;
-  
+  display: flex;
+  justify-content: center;
+}
+
+.imgC {
+  margin: auto;
 }
 
 //character Name style
