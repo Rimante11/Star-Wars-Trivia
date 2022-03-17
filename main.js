@@ -175,7 +175,6 @@ let character2;
 
 //show characters button
 showCharactersButton.addEventListener("click", () => {
-
     startImage.style.display = "none";
     //kollar om ingen karaktär är valt, option som har value none i html:en
     if(characterChoise1.value === "none" || characterChoise2.value === "none"){
