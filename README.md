@@ -1,5 +1,7 @@
 # Star-Wars-Trivia
 
+Check it out: https://rimante11.github.io/Star-Wars-Trivia/
+
 Inlämningsuppgift 2 - Star Wars Trivia (G/VG)
 
 Beskrivning: Du ska med hjälp av ett API skapa en applikation där användaren kan jämföra en Star Wars-karaktär med andra karaktärer och deras egenskaper!
