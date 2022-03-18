@@ -209,7 +209,7 @@ showCharactersButton.addEventListener("click", () => {
           buttonsToCompare(character1);
 
 
-          //Jobba hemma med det! för värje btn to compare
+          //behövs ej kan gå med forEatch
           /* let compareGenderBtn = document.querySelector(".gender");
           compareGenderBtn.addEventListener("click", (btn) => {
             if(btn.className == "gender"){
@@ -218,8 +218,6 @@ showCharactersButton.addEventListener("click", () => {
             console.log("Gender button");
             genderGender(character1);
           }); */
-          
-
       });
       
       fetchData(characterChoise2.value).then(dataInfo=>{
