@@ -169,77 +169,77 @@ let fetchData = async (choiseOfCharacter)=>{
   return data;
 }
 
-//skapar characters som ska ha fetchat data
+//skapar characters som ska ha fetchat data 
 let character1;
 let character2;
 
 //show characters button
 showCharactersButton.addEventListener("click", () => {
-    startImage.style.display = "none";
-    //kollar om ingen karaktär är valt, option som har value none i html:en
-    if(characterChoise1.value === "none" || characterChoise2.value === "none"){
-        alert("Please, choose your characters.");
-    }
-    //kollar om det är samma character och ber att välja annan karaktär
-    else if(characterChoise1.value === characterChoise2.value){
-        alert("Please, choose a different characters.");
-    }
-    else{
-      //fetchar data för character1 & character2 för att kunna jämföra som Brandon sa.
-      fetchData(characterChoise1.value).then(dataInfo=>{
-          character1 = new Character(dataInfo.name, dataInfo.gender, dataInfo.height, dataInfo.mass, dataInfo.hair_color, characterChoise1.value);
-          //sätter in character1 to buildCharacter för att 'pusha' in den i html:en
-          charContainer1.innerHTML = buildCharacter(character1);
-          console.log("Character 1 ",character1);
+  startImage.style.display = "none";
+  //kollar om ingen karaktär är valt, option som har value none i html:en
+  if(characterChoise1.value === "none" || characterChoise2.value === "none"){
+    alert("Please, choose your characters.");
+  }
+  //kollar om det är samma character och ber att välja annan karaktär
+  else if(characterChoise1.value === characterChoise2.value){
+    alert("Please, choose a different characters.");
+  }
+  else{
+    //fetchar data för character1 & character2 för att kunna jämföra som Brandon sa.
+    fetchData(characterChoise1.value).then(dataInfo=>{
+      character1 = new Character(dataInfo.name, dataInfo.gender, dataInfo.height, dataInfo.mass, dataInfo.hair_color, characterChoise1.value);
+      //sätter in character1 to buildCharacter för att 'pusha' in den i html:en
+      charContainer1.innerHTML = buildCharacter(character1);
+      console.log("Character 1 ",character1);
+
+      //compare buttons för character 1
+      const buttonsToCompare = (character1) => {
+        const compareButton = document.querySelectorAll("#compareBtn")
+          compareButton.forEach( btn => {
+            btn.addEventListener("click", () => {
+              let attribut = btn.getAttribute("dataAttribut");
+                if(character1 === character1){
+                  buttonCheck(character1, character2, attribut, btn);
+                }else{
+                  console.log("Funkar inte");
+                }
+            });
+         });
+       }
+      buttonsToCompare(character1);
+  
+      //behövs ej kan gå med forEatch
+      /* let compareGenderBtn = document.querySelector(".gender");
+        compareGenderBtn.addEventListener("click", (btn) => {
+          if(btn.className == "gender"){
+            characterProfile.weight(nextToShow);
+          }
+          console.log("Gender button");
+          genderGender(character1);
+        }); */
+    });
         
-          //compare buttons för character 1
-          const buttonsToCompare = (character1) => {
-            const compareButton = document.querySelectorAll("#compareBtn")
-              compareButton.forEach( btn => {
-                btn.addEventListener("click", () => {
-                  let attribut = btn.getAttribute("data-id");
-                    if(character1 === character1){
-                      buttonCheck(character1, character2, attribut, btn);
-                    }else{
-                      console.log("Funkar inte");
-                    }
-                });
+    fetchData(characterChoise2.value).then(dataInfo=>{
+      character2 = new Character(dataInfo.name, dataInfo.gender, dataInfo.height, dataInfo.mass, dataInfo.hair_color, characterChoise2.value);
+      charContainer2.innerHTML = buildCharacter(character2);
+      console.log("Character 2",character2);
+      //compare buttons för character 2
+      const buttonsToCompare = (character2) => {
+        const compareButton = document.querySelectorAll("#compareBtn"); 
+        //för värje btn
+        compareButton.forEach( btn => {
+          btn.addEventListener("click", () => {
+          //getAttribute returnerar value av speciferat atribut på element
+              let attribut = btn.getAttribute("dataAttribut");
+                if(character2 === character2){
+                  buttonCheck(character2, character1, attribut, btn);
+                }else{
+                  console.log("Funkar inte");
+                }
               });
+            });
           }
-          buttonsToCompare(character1);
-
-
-          //behövs ej kan gå med forEatch
-          /* let compareGenderBtn = document.querySelector(".gender");
-          compareGenderBtn.addEventListener("click", (btn) => {
-            if(btn.className == "gender"){
-              characterProfile.weight(nextToShow);
-            }
-            console.log("Gender button");
-            genderGender(character1);
-          }); */
-      });
-      
-      fetchData(characterChoise2.value).then(dataInfo=>{
-          character2 = new Character(dataInfo.name, dataInfo.gender, dataInfo.height, dataInfo.mass, dataInfo.hair_color, characterChoise2.value);
-          charContainer2.innerHTML = buildCharacter(character2);
-          console.log("Character 2",character2);
-          //compare buttons för character 2
-          const buttonsToCompare = (character2) => {
-            const compareButton = document.querySelectorAll("#compareBtn");
-              //för värje btn
-              compareButton.forEach( btn => {
-                btn.addEventListener("click", () => {
-                  let attribut = btn.getAttribute("data-id");
-                    if(character2 === character2){
-                      buttonCheck(character2, character1, attribut, btn);
-                    }else{
-                      console.log("Funkar inte");
-                    }
-                });
-              });
-          }
-          buttonsToCompare(character2);
+        buttonsToCompare(character2);
       });
     }
 });
@@ -263,10 +263,10 @@ let buildCharacter = (charUser) =>
         </ul>
     </div>
     <div class="buttonContainer">
-      <button id="compareBtn" class="gender" data-id="${charUser.mark}">Gender</button>
-      <button id="compareBtn" class="length" data-id="${charUser.mark}">Length</button>
-      <button id="compareBtn" class="weight" data-id="${charUser.mark}">Weight</button>
-      <button id="compareBtn" class="hairColor" data-id="${charUser.mark}">Haircolor</button>
+      <button class="gender" id="compareBtn" dataAttribut="${charUser.mark}">Gender</button>
+      <button class="length"  id="compareBtn" dataAttribut="${charUser.mark}">Length</button>
+      <button class="weight" id="compareBtn" dataAttribut="${charUser.mark}">Weight</button>
+      <button class="hairColor" id="compareBtn" dataAttribut="${charUser.mark}">Haircolor</button>
     </div>
   </div>
 `
