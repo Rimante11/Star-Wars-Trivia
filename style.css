@@ -212,7 +212,7 @@ img {
 }
 
 p {
-  color: #f7bf0a;
+  color: #363632;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,6 +223,12 @@ p {
   padding-left: 35px;
   padding-right: 35px;
   text-align: center;
+  width: 235px;
+  background-color: #f7bf0a;
+  border-radius: 5px;
+  font-family: 'Merriweather Sans', sans-serif;
+  border: 4px solid #292927;
+  background-color: #f7bf0ab3;
 }
 
 .characterContainer {
@@ -243,6 +249,9 @@ p {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #f7bf0a;
+  margin-bottom: 10px;
 }
 
 .charBox {

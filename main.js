@@ -211,7 +211,10 @@ showCharactersButton.addEventListener("click", () => {
 
           //Jobba hemma med det! för värje btn to compare
           /* let compareGenderBtn = document.querySelector(".gender");
-          compareGenderBtn.addEventListener("click", () => {
+          compareGenderBtn.addEventListener("click", (btn) => {
+            if(btn.className == "gender"){
+              characterProfile.weight(nextToShow);
+            }
             console.log("Gender button");
             genderGender(character1);
           }); */
@@ -270,8 +273,7 @@ let buildCharacter = (charUser) =>
   </div>
 `
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-//sist
+
 //kollar button class lika med class namn och sen sätter method till den class 
 let buttonCheck = (characterProfile, nextToShow, attribut, btn) => {
   if(characterProfile.mark == attribut){
@@ -286,3 +288,4 @@ let buttonCheck = (characterProfile, nextToShow, attribut, btn) => {
       }
   }
 }
+
